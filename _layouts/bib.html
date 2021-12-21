@@ -2,14 +2,21 @@
 ---
 
 <div class="row">
-  <div class="col-sm-2 abbr">
-  {% if entry.abbr %}
-    {% if site.data.venues[entry.abbr] %}
-    <abbr class="badge"><a href="{{site.data.venues[entry.abbr].url}}">{{entry.abbr}}</a></abbr>
-    {% else %}
-    <abbr class="badge">{{entry.abbr}}</abbr>
-    {% endif %}
-  {% endif %}
+  <div class="col-sm-2">
+    <div class="abbr">
+      {% if entry.abbr %}
+        {% if site.data.venues[entry.abbr] %}
+        <abbr class="badge"><a href="{{site.data.venues[entry.abbr].url}}">{{entry.abbr}}</a></abbr>
+        {% else %}
+        <abbr class="badge">{{entry.abbr}}</abbr>
+        {% endif %}
+      {% endif %}
+      {% if entry.preview %}
+      <div class="preview">
+        <img src="{{entry.preview}}" width="100%">
+      </div>
+      {% endif %}
+    </div>
   </div>
 
   <div id="{{entry.key}}" class="col-sm-8">
@@ -131,6 +138,9 @@
     {% endif %}
     {% if entry.website %}
       <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button">Website</a>
+    {% endif %}
+    {% if entry.video %}
+      <a href="{{ entry.video }}" class="btn btn-sm z-depth-0" role="button">Video</a>
     {% endif %}
     </div>
 
