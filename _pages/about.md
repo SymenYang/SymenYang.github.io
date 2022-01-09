@@ -6,7 +6,7 @@ description: <h2>阳希明</h2>
 
 profile:
   align: right
-  image: head.jpeg
+  image: head.jpg
 
 news: false  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
